@@ -7,25 +7,25 @@ const isAlphabet = /^[a-zA-Z]+$/;
 let letter = [];
 let letterCount = [];
 
-let name1 = prompt('What is your name1?');
+let name1 = prompt('Enter in name 1: ');
 
-console.log(isAlphabet.test(name1));
+
 while (!isAlphabet.test(name1)) {
   console.log('Please enter alphabets only');
-  name1 = prompt('What is your name1?');
+  name1 = prompt('Enter in name 1: ');
 }
-let name2 = prompt('What is your name2?');
+let name2 = prompt('Enter in name 2: ');
 while (!isAlphabet.test(name2)) {
   console.log('Please enter alphabets only');
-  name2 = prompt('What is your name2?');
+  name2 = prompt('Enter in name 2: ');
 }
 const sentence = `${name1} matches ${name2}`;
 countLetter(sentence.replace(/\s/g, ''));
 const matchPerc = matchPercentage(letterCount);
 if (matchPerc > 80) {
-  console.log(sentence + matchPerc + ' %, good match');
+  console.log(sentence +' '+ matchPerc + ' %, good match');
 } else {
-  console.log(sentence + matchPerc + ' %');
+  console.log(sentence +' '+ matchPerc + ' %');
 }
 console.log();
 function countLetter(sentence) {
@@ -73,7 +73,7 @@ function matchPercentage(countLetter) {
   }
 }
 
-let csv = prompt('Enter csv name?');
+let csv = prompt('Enter csv name(Enter in file name only, do not include .csv. Ensure csv file in stored in project folder, if not add csv file to project folder): ');
 
 let males = [];
 let females = [];
@@ -172,4 +172,6 @@ try {
 
 process.on('uncaughtException', function (err) {
     console.log("File does not exist in project. Please add.");
+    
+
   });
